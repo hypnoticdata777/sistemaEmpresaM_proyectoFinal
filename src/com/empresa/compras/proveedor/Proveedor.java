@@ -6,6 +6,11 @@ package com.empresa.compras.proveedor;
  * identificacion fiscal y si esta activo. En la arquitectura por capas,
  * el Modelo solo guarda informacion para moverla entre Controller, Service
  * y Repository.
+ *
+ * Clave para exposicion:
+ * Esta clase no valida ni guarda en base de datos. Su responsabilidad es ser
+ * el "molde" del proveedor. Las reglas estan en ProveedorService y el SQL esta
+ * en ProveedorRepository. Separarlo asi evita mezclar datos, reglas y base de datos.
  */
 public class Proveedor {
     // Identificador unico del proveedor en la base de datos.

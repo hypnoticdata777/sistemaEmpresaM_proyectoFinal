@@ -15,6 +15,11 @@ import java.util.List;
  * Se encarga de guardar, buscar y actualizar proveedores en la base de datos.
  * En la arquitectura por capas, esta clase es la encargada de usar SQL
  * para la tabla Proveedor.
+ *
+ * Clave para exposicion:
+ * El Repository es el unico archivo de proveedores que conoce SQL. Esto permite
+ * que el Controller y el Service no dependan de consultas, sino de metodos con
+ * nombres claros como guardar, obtenerTodos, buscarPorId y desactivar.
  */
 public class ProveedorRepository {
     /*
@@ -26,6 +31,10 @@ public class ProveedorRepository {
         // Esta consulta inserta un proveedor con datos de contacto y estado activo.
         String sql = "INSERT INTO Proveedor (nombre, rfc, telefono, correo, direccion, activo) VALUES (?, ?, ?, ?, ?, ?)";
 
+        /*
+         * PreparedStatement se usa para enviar valores por separado en los signos ?.
+         * Eso hace el codigo mas claro y reduce riesgos al construir SQL con texto.
+         */
         // Abrimos conexion y preparamos el INSERT con parametros.
         try (Connection conexion = Conexion.getConexion();
              PreparedStatement ps = conexion.prepareStatement(sql)) {

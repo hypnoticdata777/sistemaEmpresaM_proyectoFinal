@@ -5,6 +5,7 @@
 
 exportaciones/
 sistemaEmpresaM_proyectoFinal/
+tmp/
 
 *.class
 *.jar

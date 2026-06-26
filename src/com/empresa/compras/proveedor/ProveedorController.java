@@ -7,6 +7,10 @@ import java.util.List;
  * Es la entrada para registrar, mostrar, buscar y desactivar proveedores.
  * En la arquitectura por capas, este Controller recibe la solicitud y la
  * manda al Service, sin aplicar SQL ni reglas complejas directamente.
+ *
+ * Clave para exposicion:
+ * El Controller funciona como puente entre la consola App y la logica de
+ * proveedores. Por eso sus metodos son cortos: recibe datos y delega al Service.
  */
 public class ProveedorController {
     // Servicio que contiene las reglas de negocio de proveedores.
