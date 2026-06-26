@@ -1,0 +1,4 @@
+Coloca aqui los JAR requeridos por el proyecto:
+
+mysql-connector-j.jar
+gson.jar

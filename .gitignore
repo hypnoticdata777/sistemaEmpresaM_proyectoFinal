@@ -1,0 +1,13 @@
+.agents/
+.codex/
+.idea/
+.vscode/
+
+exportaciones/
+sistemaEmpresaM_proyectoFinal/
+
+*.class
+*.jar
+out/
+build/
+target/
